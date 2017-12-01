@@ -1,0 +1,34 @@
+students = []
+
+def get_students_titlecase():
+    students_titlecase = []
+    for student in students:
+        students_titlecase = student["name"].title();
+    return students_titlecase
+
+def print_students_titlecase():
+    students_titlecase = get_students_titlecase()
+    print(students_titlecase)
+
+def add_students(name, student_id=332):
+    student = {"name": name, "student_id":student_id}
+    students.append(student)
+
+#def var_args(name, **kwargs):
+    #print(name)
+    #print(kwargs["description"], kwargs["feedback"])
+
+student_list = get_students_titlecase()
+
+#add_students(name="Lavish", student_id=1)
+
+#var_args("Lavish", description="Jain", feedback=None, pluralsight_subscriber=True)
+
+st_ask = input("Do you want to add a student?(Y/N):")
+if st_ask == "Y":
+    st_name = input("Enter student name:")
+    st_id = input("Enter student id:")
+    add_students(st_name, st_id)
+    print_students_titlecase()
+else:
+    print("Thanks for using the app.")
